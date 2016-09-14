@@ -12,79 +12,49 @@
 
 using namespace std;
 
-class Adress {
-    string name, number, city;
-public:
-    Adress() {
-        name = "";
-        number = "";
-        city = "";
-    }
-    Adress(string name, string number, string city) {
-        this->name = name;
-        this->number = number;
-        this->city = city;
-    }
-    
-    string getName() {
-        return name;
-    }
-    string getNumber() {
-        return number;
-    }
-    string getCity() {
-        return city;
-    }
-    
-    void setName(string name) {
-        this->name = name;
-    }
-    void setNumber(string number) {
-        this->number = number;
-    }
-    void setCity(string city) {
-        this->city = city;
-    }
-};
-
-class List {
-public:
-    Adress human;
-    List *next;
-};
-
-void showAll(List *currArray, int num) {
+void showAll(map<string, vector<string>> &adressList, int num) {
     if (num == 0) {
         cout << "Sorry, your contact list is empty!" << endl;
     } else {
         cout << "--------------------------------------------------------------------" << endl;
         cout << "| Name                 | Phone              | City                 |" << endl;
         cout << "--------------------------------------------------------------------" << endl;
-        for(int i = 0; i<num; i++) {
-            cout << "| " << currArray->human.getName();
-            for(int k = 0; k<(21-currArray->human.getName().length()); k++) {
+        int n = 1;
+        for(auto elem : adressList) {
+            auto tempVector = elem.second;
+            ostringstream out;
+            out << n;
+            string numberStr = out.str();
+            cout << "| " << numberStr << ". " << tempVector[0];
+            for(int k = 0; k<(21-numberStr.length() - 2 - tempVector[0].length()); k++) {
                 cout << " ";
             }
-            cout << "| " << currArray->human.getNumber();
-            for(int k = 0; k<(19-currArray->human.getNumber().length()); k++) {
+            cout << "| " << elem.first;
+            for(int k = 0; k<(19-elem.first.length()); k++) {
                 cout << " ";
             }
-            cout << "| " << currArray->human.getCity();
-            for(int k = 0; k<(21-currArray->human.getCity().length()); k++) {
+            cout << "| " << tempVector[1];
+            for(int k = 0; k<(21-tempVector[1].length()); k++) {
                 cout << " ";
             }
             cout << "|" << endl;
-            currArray = currArray->next;
+            n++;
         }
         cout << "--------------------------------------------------------------------" << endl;
     }
+    cout << "Enter phone number of the contact to select it or enter ECS to back to main menu: ";
+    string tempNumber;
+    cin >> tempNumber;
+    if (tempNumber != "Esc") {
+        changeModule(adressList, tempNumber);
+    }
 }
 
-void addNew(List *&head, int &num) {
+void addNew(map<string, vector<string>> &adressList, int &num) {
     string tempName, tempNumber, tempCity;
     cout << "Enter name: ";
     cin >> tempName;
-    cout << "Enter phone number: ";
+    cout << "Enter number: ";
     cin >> tempNumber;
     cout << "Enter city: ";
     cin >> tempCity;
@@ -94,42 +64,41 @@ void addNew(List *&head, int &num) {
     else
         sourceFile << endl << tempName << " " << tempNumber << " " << tempCity;
     sourceFile.close();
-    head->human.setName(tempName);
-    head->human.setNumber(tempNumber);
-    head->human.setCity(tempCity);
-    head->next = new List;
-    head = head->next;
+    vector<string> tempVector(2);
+    tempVector[0] = tempName;
+    tempVector[1] = tempCity;
+    adressList.insert(pair<string, vector<string>>(tempNumber, tempVector));
     num++;
 }
 
-void searchName(List *currArray, int num) {
+void searchName(map<string, vector<string>> adressList, int num) {
     int amount = 0;
     cout << "Enter NAME: ";
     string tempName;
     cin >> tempName;
-    for(int i = 0; i<num; i++) {
-        if(currArray->human.getName() == tempName) {
+    for(auto iter : adressList) {
+        auto tempVector = iter.second;
+        if(tempVector[0] == tempName) {
             if (amount == 0) {
                 cout << "--------------------------------------------------------------------" << endl;
                 cout << "| Name                 | Phone              | City                 |" << endl;
                 cout << "--------------------------------------------------------------------" << endl;
             }
-            cout << "| " << currArray->human.getName();
-            for(int k = 0; k<(21-currArray->human.getName().length()); k++) {
+            cout << "| " << tempVector[0];
+            for(int k = 0; k<(21-tempVector[0].length()); k++) {
                 cout << " ";
             }
-            cout << "| " << currArray->human.getNumber();
-            for(int k = 0; k<(19-currArray->human.getNumber().length()); k++) {
+            cout << "| " << iter.first;
+            for(int k = 0; k<(19-iter.first.length()); k++) {
                 cout << " ";
             }
-            cout << "| " << currArray->human.getCity();
-            for(int k = 0; k<(21-currArray->human.getCity().length()); k++) {
+            cout << "| " << tempVector[1];
+            for(int k = 0; k<(21-tempVector[1].length()); k++) {
                 cout << " ";
             }
             cout << "|" << endl;
             amount++;
         }
-        currArray = currArray->next;
     }
     cout << "--------------------------------------------------------------------" << endl;
     if(amount != 0) {
@@ -142,34 +111,34 @@ void searchName(List *currArray, int num) {
     cout << ("Search completed!") << endl;
 }
 
-void searchNumber(List *currArray, int num) {
+void searchNumber(map<string, vector<string>> adressList, int num) {
     int amount = 0;
     cout << "Enter NUMBER: ";
     string tempNumber;
     cin >> tempNumber;
-    for(int i = 0; i<num; i++) {
-        if(currArray->human.getNumber() == tempNumber) {
+    for(auto iter : adressList) {
+        auto tempVector = iter.second;
+        if(iter.first == tempNumber) {
             if (amount == 0) {
                 cout << "--------------------------------------------------------------------" << endl;
                 cout << "| Name                 | Phone              | City                 |" << endl;
                 cout << "--------------------------------------------------------------------" << endl;
             }
-            cout << "| " << currArray->human.getName();
-            for(int k = 0; k<(21-currArray->human.getName().length()); k++) {
+            cout << "| " << tempVector[0];
+            for(int k = 0; k<(21-tempVector[0].length()); k++) {
                 cout << " ";
             }
-            cout << "| " << currArray->human.getNumber();
-            for(int k = 0; k<(19-currArray->human.getNumber().length()); k++) {
+            cout << "| " << iter.first;
+            for(int k = 0; k<(19-iter.first.length()); k++) {
                 cout << " ";
             }
-            cout << "| " << currArray->human.getCity();
-            for(int k = 0; k<(21-currArray->human.getCity().length()); k++) {
+            cout << "| " << tempVector[1];
+            for(int k = 0; k<(21-tempVector[1].length()); k++) {
                 cout << " ";
             }
             cout << "|" << endl;
             amount++;
         }
-        currArray = currArray->next;
     }
     cout << "--------------------------------------------------------------------" << endl;
     if(amount != 0) {
@@ -182,34 +151,34 @@ void searchNumber(List *currArray, int num) {
     cout << ("Search completed!") << endl;
 }
 
-void searchCity(List *currArray, int num) {
+void searchCity(map<string, vector<string>> adressList, int num) {
     int amount = 0;
     cout << "Enter CITY: ";
     string tempCity;
     cin >> tempCity;
-    for(int i = 0; i<num; i++) {
-        if(currArray->human.getCity() == tempCity) {
+    for(auto iter : adressList) {
+        auto tempVector = iter.second;
+        if(tempVector[1] == tempCity) {
             if (amount == 0) {
                 cout << "--------------------------------------------------------------------" << endl;
                 cout << "| Name                 | Phone              | City                 |" << endl;
                 cout << "--------------------------------------------------------------------" << endl;
             }
-            cout << "| " << currArray->human.getName();
-            for(int k = 0; k<(21-currArray->human.getName().length()); k++) {
+            cout << "| " << tempVector[0];
+            for(int k = 0; k<(21-tempVector[0].length()); k++) {
                 cout << " ";
             }
-            cout << "| " << currArray->human.getNumber();
-            for(int k = 0; k<(19-currArray->human.getNumber().length()); k++) {
+            cout << "| " << iter.first;
+            for(int k = 0; k<(19-iter.first.length()); k++) {
                 cout << " ";
             }
-            cout << "| " << currArray->human.getCity();
-            for(int k = 0; k<(21-currArray->human.getCity().length()); k++) {
+            cout << "| " << tempVector[1];
+            for(int k = 0; k<(21-tempVector[1].length()); k++) {
                 cout << " ";
             }
             cout << "|" << endl;
             amount++;
         }
-        currArray = currArray->next;
     }
     cout << "--------------------------------------------------------------------" << endl;
     if(amount != 0) {
@@ -222,7 +191,7 @@ void searchCity(List *currArray, int num) {
     cout << ("Search completed!") << endl;
 }
 
-void search(List *currArray, int num) {
+void search(map<string, vector<string>> adressList, int num) {
     cout << "-------------------------------SEARCH-------------------------------" << endl;
     cout << "--------------------------------------------------------------------" << endl;
     cout << "|       1. Name        |   2. Phone number  |       3. City        |" << endl;
@@ -234,31 +203,29 @@ void search(List *currArray, int num) {
     
     switch(menuItem) {
         case 1:
-            searchName(currArray, num);
+            searchName(adressList, num);
             break;
         case 2:
-            searchNumber(currArray, num);
+            searchNumber(adressList, num);
             break;
         case 3:
-            searchCity(currArray, num);
+            searchCity(adressList, num);
             break;
         default:
-            cout << "Cancel...";
+            cout << "Cancel..." << endl;
             break;
     }
 }
 
 int main() {
-    string tempName, tempNumber, tempCity;
-    
-    List *currArray = new List, *top, *head;
-    top = currArray;
-    head = currArray;
+    map<string, vector<string>> adressList;
     
     int num = 0;
     
+    string tempName, tempNumber, tempCity;
+    
     /*ofstream fout("adressBookCPP.txt"); // Create file
-    fout.close();*/
+     fout.close();*/
     
     ifstream sourceFile("adressBookCPP.txt", ios_base::in);
     
@@ -267,41 +234,34 @@ int main() {
         if (tempName != "") {
             sourceFile >> tempNumber;
             sourceFile >> tempCity;
-            currArray->human.setName(tempName);
-            currArray->human.setNumber(tempNumber);
-            currArray->human.setCity(tempCity);
-            currArray->next = new List;
-            currArray = currArray->next;
-            head = currArray;
+            vector<string> tempVector(2);
+            tempVector[0] = tempName;
+            tempVector[1] = tempCity;
+            adressList.insert(pair<string, vector<string>>(tempNumber, tempVector));
             num++;
         }
     }
     
-    sourceFile.close();
-    currArray = top;
-    
     bool ind = true;
-    
     while(ind) {
         cout << "------------------------------CONTACTS------------------------------" << endl;
         cout << "--------------------------------------------------------------------" << endl;
-        cout << "|      1. Show all     |     2. Add new     |      3. Search       |" << endl;
+        cout << "|   1. Show all   |    2. Add new    |   3. Search   |   4. Exit   |" << endl;
         cout << "--------------------------------------------------------------------" << endl;
         cout << "Enter number of menu item: ";
         
-        int menuItem;
+        int menuItem = 0;
         cin >> menuItem;
         
         switch(menuItem) {
             case 1:
-                showAll(currArray, num);
+                showAll(adressList, num);
                 break;
             case 2:
-                addNew(head, num);
+                addNew(adressList, num);
                 break;
-                
             case 3:
-                search(currArray, num);
+                search(adressList, num);
                 break;
             case 4:
                 ind = false;
@@ -311,4 +271,3 @@ int main() {
         }
     }
 }
-
