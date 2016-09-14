@@ -9,10 +9,14 @@
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
+#include <map>
+#include <vector>
+#include <sstream>
+#include <string>
 
 using namespace std;
 
-void showAll(map<string, vector<string>> &adressList, int num) {
+void showAll(map<string, vector<string>> adressList, int num) {
     if (num == 0) {
         cout << "Sorry, your contact list is empty!" << endl;
     } else {
@@ -41,12 +45,6 @@ void showAll(map<string, vector<string>> &adressList, int num) {
             n++;
         }
         cout << "--------------------------------------------------------------------" << endl;
-    }
-    cout << "Enter phone number of the contact to select it or enter ECS to back to main menu: ";
-    string tempNumber;
-    cin >> tempNumber;
-    if (tempNumber != "Esc") {
-        changeModule(adressList, tempNumber);
     }
 }
 
