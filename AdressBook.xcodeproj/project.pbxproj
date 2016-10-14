@@ -1,0 +1,275 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57C567651DB1515300A5E5BC /* AdressBook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57C5675C1DB1515300A5E5BC /* AdressBook.cpp */; };
+		57C567661DB1515300A5E5BC /* Contact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57C5675E1DB1515300A5E5BC /* Contact.cpp */; };
+		57C567671DB1515300A5E5BC /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57C567601DB1515300A5E5BC /* Controller.cpp */; };
+		57C567681DB1515300A5E5BC /* View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57C567621DB1515300A5E5BC /* View.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		57C567501DB1514800A5E5BC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		57C567521DB1514800A5E5BC /* AdressBook */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdressBook; sourceTree = BUILT_PRODUCTS_DIR; };
+		57C5675C1DB1515300A5E5BC /* AdressBook.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AdressBook.cpp; path = ../../../AdressBookBeta2/AdressBook.cpp; sourceTree = "<group>"; };
+		57C5675D1DB1515300A5E5BC /* AdressBook.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = AdressBook.hpp; path = ../../../AdressBookBeta2/AdressBook.hpp; sourceTree = "<group>"; };
+		57C5675E1DB1515300A5E5BC /* Contact.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Contact.cpp; path = ../../../AdressBookBeta2/Contact.cpp; sourceTree = "<group>"; };
+		57C5675F1DB1515300A5E5BC /* Contact.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Contact.hpp; path = ../../../AdressBookBeta2/Contact.hpp; sourceTree = "<group>"; };
+		57C567601DB1515300A5E5BC /* Controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Controller.cpp; path = ../../../AdressBookBeta2/Controller.cpp; sourceTree = "<group>"; };
+		57C567611DB1515300A5E5BC /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = ../../../AdressBookBeta2/Model.h; sourceTree = "<group>"; };
+		57C567621DB1515300A5E5BC /* View.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = View.cpp; path = ../../../AdressBookBeta2/View.cpp; sourceTree = "<group>"; };
+		57C567631DB1515300A5E5BC /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = View.h; path = ../../../AdressBookBeta2/View.h; sourceTree = "<group>"; };
+		57C567641DB1515300A5E5BC /* View.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = View.hpp; path = ../../../AdressBookBeta2/View.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57C5674F1DB1514800A5E5BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		57C567491DB1514800A5E5BC = {
+			isa = PBXGroup;
+			children = (
+				57C567541DB1514800A5E5BC /* AdressBook */,
+				57C567531DB1514800A5E5BC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		57C567531DB1514800A5E5BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57C567521DB1514800A5E5BC /* AdressBook */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57C567541DB1514800A5E5BC /* AdressBook */ = {
+			isa = PBXGroup;
+			children = (
+				57C5675C1DB1515300A5E5BC /* AdressBook.cpp */,
+				57C5675D1DB1515300A5E5BC /* AdressBook.hpp */,
+				57C5675E1DB1515300A5E5BC /* Contact.cpp */,
+				57C5675F1DB1515300A5E5BC /* Contact.hpp */,
+				57C567601DB1515300A5E5BC /* Controller.cpp */,
+				57C567611DB1515300A5E5BC /* Model.h */,
+				57C567621DB1515300A5E5BC /* View.cpp */,
+				57C567631DB1515300A5E5BC /* View.h */,
+				57C567641DB1515300A5E5BC /* View.hpp */,
+			);
+			path = AdressBook;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57C567511DB1514800A5E5BC /* AdressBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57C567591DB1514800A5E5BC /* Build configuration list for PBXNativeTarget "AdressBook" */;
+			buildPhases = (
+				57C5674E1DB1514800A5E5BC /* Sources */,
+				57C5674F1DB1514800A5E5BC /* Frameworks */,
+				57C567501DB1514800A5E5BC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdressBook;
+			productName = AdressBook;
+			productReference = 57C567521DB1514800A5E5BC /* AdressBook */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57C5674A1DB1514800A5E5BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = vicmac;
+				TargetAttributes = {
+					57C567511DB1514800A5E5BC = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 57C5674D1DB1514800A5E5BC /* Build configuration list for PBXProject "AdressBook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 57C567491DB1514800A5E5BC;
+			productRefGroup = 57C567531DB1514800A5E5BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57C567511DB1514800A5E5BC /* AdressBook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57C5674E1DB1514800A5E5BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57C567661DB1515300A5E5BC /* Contact.cpp in Sources */,
+				57C567651DB1515300A5E5BC /* AdressBook.cpp in Sources */,
+				57C567671DB1515300A5E5BC /* Controller.cpp in Sources */,
+				57C567681DB1515300A5E5BC /* View.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		57C567571DB1514800A5E5BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		57C567581DB1514800A5E5BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		57C5675A1DB1514800A5E5BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		57C5675B1DB1514800A5E5BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57C5674D1DB1514800A5E5BC /* Build configuration list for PBXProject "AdressBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57C567571DB1514800A5E5BC /* Debug */,
+				57C567581DB1514800A5E5BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57C567591DB1514800A5E5BC /* Build configuration list for PBXNativeTarget "AdressBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57C5675A1DB1514800A5E5BC /* Debug */,
+				57C5675B1DB1514800A5E5BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 57C5674A1DB1514800A5E5BC /* Project object */;
+}
